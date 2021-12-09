@@ -1,0 +1,2 @@
+# javascript-freshman
+study java!
