@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>ArrayTest</title>
+
+    <style>
+
+    </style>
+  </head>
+
+  <body>
+    <script>
+
+//##################################################################################################basic q1
+var list = document.querySelector('.output ul');
+var totalBox = document.querySelector('.output p');
+var total = 0;
+list.innerHTML = '';
+totalBox.textContent = '';
+// number 1
+  var product1 = 'Underpants:6.99'
+  var product2 = 'Socks:5.99'
+  var product3 = 'T-shirt:14.99'
+  var product4 = 'Trousers:31.99'
+  var product5 = 'Shoes:23.99';
+  var product = [product1, product2, product3, product4, product5]
+
+
+for (var i = 0; i < product.length; i++) { // number 2
+  // number 3
+  var pocket = product[i];
+  var pocketSplit = pocket.split(':');
+  pocketSplit[1] = Number(pocketSplit[1]);
+  // number 4
+  total = total + pocketSplit[1];
+  
+  // number 5
+  itemText = pocketSplit[0] + '—$'+ pocketSplit[1];
+
+  var listItem = document.createElement('li');
+  listItem.textContent = itemText;
+  list.appendChild(listItem);
+}
+
+totalBox.textContent = 'Total: $' + total.toFixed(2);
+
+//#######################################################################################basic q2
+
+
+var list = document.querySelector('.output ul');
+var searchInput = document.querySelector('.output input');
+var searchBtn = document.querySelector('.output button');
+
+list.innerHTML = '';
+
+var myHistory = [];
+
+searchBtn.onclick = function() {
+  // we will only allow a term to be entered if the search input isn't empty
+  if (searchInput.value !== '') {
+    // number 1
+myHistory.unshift(searchInput.value);
+    // empty the list so that we don't display duplicate entries
+    // the display is regenerated every time a search term is entered.
+    list.innerHTML = '';
+
+    // loop through the array, and display all the search terms in the list
+    for (var i = 0; i < myHistory.length; i++) {
+      itemText = myHistory[i];
+      var listItem = document.createElement('li');
+      listItem.textContent = itemText;
+      list.appendChild(listItem);
+    }
+
+    // If the array length is 5 or more, remove the oldest search term
+    if (myHistory.length >= 5) {
+      // number 2
+myHistory.pop()
+    }
+
+    // empty the search input and focus it, ready for the next term to be entered
+    searchInput.value = '';
+    searchInput.focus();
+  }
+}
+//###############################################################practice q1
+
+// Add your code here
+var myArray = ['bornstew', 'queen', 'apple', 'metalica']
+myArray.shift();
+myArray[0] = 'king';
+myArray.unshift('bloodstew');
+// Don't edit the code below here!Q
+
+section.innerHTML = ' ';
+let para1 = document.createElement('p');
+para1.textContent = `Array: ${ myArray }`;
+
+section.appendChild(para1);
+    
+
+//#############################################################practice q2
+
+// Add your code here
+
+let myString = 'Ryu+Ken+Chun-Li+Cammy+Guile+Sakura+Sagat+Juri';
+var myArray = myString.split('+');
+var arrayLength = myArray.length
+var lastItem = myArray[arrayLength-1]
+// Don't edit the code below here!
+
+section.innerHTML = ' ';
+let para1 = document.createElement('p');
+para1.textContent = `Array: ${ myArray }`;
+
+let para2 = document.createElement('p');
+para2.textContent = `The length of the array is ${ arrayLength }.`;
+
+let para3 = document.createElement('p');
+para3.textContent = `The last item in the array is "${ lastItem }".`;
+
+section.appendChild(para1);
+section.appendChild(para2);
+section.appendChild(para3);
+    
+//#############################################################practice q3
+
+
+let myArray = [ "Ryu", "Ken", "Chun-Li", "Cammy", "Guile", "Sakura", "Sagat", "Juri" ];
+
+// Add your code here
+myArray.pop();
+myArray.push('bae','byeong');
+
+myArray.forEach(function (item, index, array) {
+  myArray[index] = item+ '\(' + index + '\)'
+})
+var myString = myArray.join('-')
+
+// Don't edit the code below here!
+
+section.innerHTML = ' ';
+
+let para1 = document.createElement('p');
+para1.textContent = myString;
+
+section.appendChild(para1);
+
+//#############################################################practice q4
+
+const birds = [ "Parrots", "Falcons", "Eagles", "Emus", "Caracaras", "Egrets" ];
+
+// Add your code here
+var removeIndex = birds.indexOf('Eagles');
+birds.splice(removeIndex, 1);
+
+const eBirds = []
+birds.forEach(
+  function (item){
+
+    if(item.startsWith('E')) {
+    eBirds.push(item)
+    }
+
+  }
+)
+
+// Don't edit the code below here!
+
+section.innerHTML = ' ';
+
+const para1 = document.createElement('p');
+para1.textContent = eBirds;
+
+section.appendChild(para1);
+
+
+    </script>
+  </body>
+</html>

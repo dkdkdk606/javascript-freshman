@@ -9,3 +9,16 @@ Number
 .toString
 + 문자열로 만듦
 .length         [0] [2]  [.length-1]
+.indexOf        .slice
+.toLowerCase    .toUpperCase
+.replace(a,b)
+
+
+
+12.23 Array
+.split(';'); string -> Array    .join(';'); Array -> string
+multidimensional Array          .length;
+.push(   );  return값           .pup(); return값
+.unshift(   );                  .shift();
+
+
